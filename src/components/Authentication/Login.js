@@ -18,20 +18,18 @@ const Login = ({ switchToRegister, onSuccess }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/login', credentials, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const response = await axios.post('/api/login', {
+        email: credentials.email,
+        password: credentials.password,
       });
   
       const { data } = response;
-  
       const { token, role } = data;
       login(token, role);
       onSuccess();
     } catch (error) {
       console.error('Login error:', error);
-      setError(error.response?.data.message || 'Failed to login');
+      setError('Failed to login');
     }
   };
 
