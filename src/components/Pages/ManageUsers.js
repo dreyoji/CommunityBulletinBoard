@@ -5,8 +5,8 @@ import { useAuth } from '../../context/AuthContext';
 const ManageUsers = () => {
   const { token } = useAuth();
   const [users, setUsers] = useState([]);
-  const [sortBy, setSortBy] = useState(localStorage.getItem('sortBy') || 'name'); // Default sorting by name
-  const [sortOrder, setSortOrder] = useState(localStorage.getItem('sortOrder') || 'asc'); // Default sorting order
+  const [sortBy, setSortBy] = useState(localStorage.getItem('sortBy') || 'name'); 
+  const [sortOrder, setSortOrder] = useState(localStorage.getItem('sortOrder') || 'asc'); 
 
   useEffect(() => {
     const fetchUsers = async () => {

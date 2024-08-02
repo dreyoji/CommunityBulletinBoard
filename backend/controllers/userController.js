@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const JWT_SECRET = 'your_jwt_secret'; // Replace with your actual JWT secret
+const JWT_SECRET = 'your_jwt_secret'; 
 
 // Register a new user
 const register = async (req, res) => {
@@ -65,7 +65,7 @@ const login = async (req, res) => {
       user: {
         id: user.id,
         email: user.email,
-        role: user.role // Include role in the JWT payload
+        role: user.role 
       }
     };
 
@@ -122,7 +122,7 @@ const updateUserRole = async (req, res) => {
   
   try {
     // Retrieve the user making the request
-    const requester = req.user; // This assumes req.user is populated by authMiddleware
+    const requester = req.user; 
 
     // Check if requester is an admin
     if (requester.role !== 'admin') {

@@ -8,13 +8,14 @@ dotenv.config();
 
 // Routes
 const userRoutes = require('./routes/userRoutes');
+const eventRoutes = require('./routes/eventRoutes');
 
 // Initialize Express app
 const app = express();
 
 // Middleware
-app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
-app.use(express.json()); // Parse JSON bodies
+app.use(cors());                                      // Enable Cross-Origin Resource Sharing (CORS)
+app.use(express.json());                              // Parse JSON bodies
 
 // Connect to MongoDB database
 const connectDB = async () => {
@@ -26,17 +27,18 @@ const connectDB = async () => {
     console.log('Connected to MongoDB');
   } catch (error) {
     console.error('MongoDB connection error:', error);
-    process.exit(1); // Exit process with failure
+    process.exit(1);
   }
 };
 
-connectDB(); // Connect to MongoDB
+connectDB();
 
 // Define routes
-app.use('/api', userRoutes); // Prefix all user-related routes with /api
+app.use('/api', userRoutes);
+app.use('/api', eventRoutes);
 
 // Start server
-const PORT = process.env.PORT || 3000; // Use port 3000 if PORT is not specified in .env
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

@@ -11,7 +11,7 @@ const Register = ({ switchToLogin, onSuccess }) => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await registerUser(name, email, password); // Call registerUser with name, email, password
+      await registerUser(name, email, password); 
       onSuccess();
     } catch (error) {
       console.error('Registration error:', error);

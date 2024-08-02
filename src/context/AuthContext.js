@@ -6,7 +6,7 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const initialToken = localStorage.getItem('token');
-  const initialRole = localStorage.getItem('role') || 'user'; // Default role is user
+  const initialRole = localStorage.getItem('role') || 'user'; 
 
   const [token, setToken] = useState(initialToken);
   const [role, setRole] = useState(initialRole);
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setToken(null);
-    setRole('user'); // Reset role to user on logout
+    setRole('user'); 
     localStorage.removeItem('token');
     localStorage.removeItem('role');
   };
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
       login(token, role);
     } catch (error) {
       console.error('Registration error:', error);
-      throw error; // Propagate the error to handle in the component
+      throw error; 
     }
   };
 

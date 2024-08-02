@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import barangayPoster from '../../assets/barangay-poster.jpg'; 
-import barangayCityHall from '../../assets/barangay-city-hall.jpg'; 
-import { events } from '../../data/events'; 
-import EventCard from '../EventCard'; 
+import axios from 'axios';
+import EventCard from '../EventCard';
+import barangayPoster from '../../assets/barangay-poster.jpg';
+import barangayCityHall from '../../assets/barangay-city-hall.jpg';
 
 const LandingPage = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  const fetchEvents = async () => {
+    try {
+      const response = await axios.get('/api/events');
+      // Sort events by date in descending order
+      const sortedEvents = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      setEvents(sortedEvents);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+    }
+  };
+
   return (
     <div className="p-4">
       {/* Barangay poster image placeholder */}
@@ -18,7 +35,7 @@ const LandingPage = () => {
       >
         <img src={barangayPoster} alt="Barangay Poster" className="w-full rounded-lg shadow-lg" />
       </motion.div>
-      
+
       {/* Sta. Cruz Latest Events */}
       <div className="mb-8">
         <motion.div
@@ -33,8 +50,9 @@ const LandingPage = () => {
           </div>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Display top 3 latest events */}
           {events.slice(0, 3).map((event, index) => (
-            <EventCard key={index} event={event} index={index} />
+            <EventCard key={event._id} event={event} index={index} />
           ))}
         </div>
       </div>

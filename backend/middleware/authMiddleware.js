@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const JWT_SECRET = 'your_jwt_secret'; // Replace with your actual JWT secret
+const JWT_SECRET = 'your_jwt_secret'; 
 
 const authMiddleware = async (req, res, next) => {
   // Get token from header

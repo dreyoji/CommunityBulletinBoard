@@ -32,8 +32,8 @@ const Login = ({ switchToRegister, onSuccess }) => {
 
       const data = await response.json();
       const { token, role } = data;
-      login(token, role); // Update context with token and role
-      onSuccess(); // Execute callback for successful login
+      login(token, role); 
+      onSuccess(); 
     } catch (error) {
       console.error('Login error:', error);
       setError(error.message || 'Failed to login');

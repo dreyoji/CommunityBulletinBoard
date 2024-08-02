@@ -1,15 +1,13 @@
-// Navbar.js
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as UserIcon } from '../assets/user-icon.svg';
 import logo from '../assets/logo.png';
 import AuthModal from './Authentication/AuthModal';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from React Router DOM
+import { useNavigate } from 'react-router-dom'; 
 
 const Navbar = () => {
-  const navigate = useNavigate(); // useNavigate hook for navigation
+  const navigate = useNavigate(); 
   const { isLoggedIn, isAdmin, logout } = useAuth();
   const [isAuthModalOpen, setIsAuthModalOpen] = React.useState(false);
 
@@ -18,7 +16,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/'); // Redirect to home page after logout using navigate
+    navigate('/'); 
   };
 
   return (
