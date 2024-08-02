@@ -20,6 +20,7 @@ const Navbar = () => {
           <Link to="/history" className="hover:text-gray-700">History</Link>
           <Link to="/local-events" className="hover:text-gray-700">Local Events</Link>
           <Link to="/directory" className="hover:text-gray-700">Directory</Link>
+          <Link to="/manage-users" className="hover:text-gray-700">Manage Users</Link>
         </div>
         <div className="flex space-x-4 items-center">
           <button className="hover:text-gray-700" onClick={openAuthModal}>
