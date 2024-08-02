@@ -1,5 +1,5 @@
 {
-  "proxy": "https://community-bulletin-board-nu.vercel.app/",
+  "proxy": "http://localhost:3000",
   "name": "community-bb",
   "version": "0.1.0",
   "private": true,
