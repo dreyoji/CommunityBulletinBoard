@@ -6,10 +6,6 @@ const dotenv = require('dotenv');
 // Load environment variables from .env file
 dotenv.config();
 
-// Routes
-const userRoutes = require('./routes/userRoutes');
-const eventRoutes = require('./routes/eventRoutes');
-
 // Initialize Express app
 const app = express();
 
@@ -32,6 +28,10 @@ const connectDB = async () => {
 };
 
 connectDB();
+
+// Routes
+const userRoutes = require('./routes/userRoutes');
+const eventRoutes = require('./routes/eventRoutes');
 
 // Define routes
 app.use('/api', userRoutes);
