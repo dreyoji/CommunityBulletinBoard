@@ -35,7 +35,8 @@ export const AuthProvider = ({ children }) => {
 
   const registerUser = async (name, email, password) => {
     try {
-      const response = await fetch('/api/register', {
+      const response = await axios({
+        url: '/api/auth/register',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
