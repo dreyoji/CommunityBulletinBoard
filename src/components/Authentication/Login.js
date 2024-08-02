@@ -18,7 +18,7 @@ const Login = ({ switchToRegister, onSuccess }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios('cbb-eta.vercel.app/api/login', {
+      const response = await axios('/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
