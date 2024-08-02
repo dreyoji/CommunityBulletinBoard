@@ -31,18 +31,11 @@ const Login = ({ switchToRegister, onSuccess }) => {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Login failed');
       }
-  
-      // Parse JSON response
+
       const data = await response.json();
-  
-      // Verify
-      if (!data.token || !data.role) {
-        throw new Error('Invalid response from server');
-      }
-  
       const { token, role } = data;
-      login(token, role);
-      onSuccess();
+      login(token, role); 
+      onSuccess(); 
     } catch (error) {
       console.error('Login error:', error);
       setError(error.message || 'Failed to login');
