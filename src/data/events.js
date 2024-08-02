@@ -3,7 +3,7 @@ export const events = [
       img: '/assets/event1.jpg',
       title: 'Talentadong Sta. Cruz',
       date: 'May 14, 2023',
-      description: 'It\'s Your Time to Shine! Come and Join Talentadong Sta. Cruz.',
+      description: 'It\'s Your Time to Shine! \nCome and Join Talentadong Sta. Cruz. Come and Join Talentandong Sta. Cruz. \n\n For Registration look for: Kag. Enrico Signex Evangelista or go direct at Brgy. Hall Look for Ram Domingo',
       link: 'https://www.facebook.com/stacruzmakatiofficials/posts/pfbid06g854K4tqiSaRRLcrcHxi1rynRN3KEDcPxGrb2vM8sKNB1ZV3WQ3r1QSbQMYYPT6l'
     },
     {

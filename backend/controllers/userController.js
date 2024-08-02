@@ -6,7 +6,7 @@ const JWT_SECRET = 'your_jwt_secret'; // Replace with your actual JWT secret
 
 // Register a new user
 const register = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, role } = req.body;
 
   try {
     let user = await User.findOne({ email });
@@ -14,7 +14,10 @@ const register = async (req, res) => {
       return res.status(400).json({ message: 'User already exists with this email' });
     }
 
-    user = new User({ name, email, password });
+    // Default role to 'user' if not provided
+    const userRole = role || 'user';
+
+    user = new User({ name, email, password, role: userRole });
 
     // Hash password before saving to database
     const salt = await bcrypt.genSalt(10);
@@ -23,14 +26,15 @@ const register = async (req, res) => {
     await user.save();
 
     // Generate JWT token
-    const payload = { user: { id: user.id } };
+    const payload = { user: { id: user.id, email: user.email, role: user.role } };
     jwt.sign(
       payload,
       JWT_SECRET,
       { expiresIn: '1h' }, // Token expires in 1 hour
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        // Return token and user role in response
+        res.json({ token, role: user.role });
       }
     );
   } catch (error) {
@@ -56,11 +60,12 @@ const login = async (req, res) => {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    // Create JWT token
+    // Create JWT token with user details including role
     const payload = {
       user: {
         id: user.id,
-        email: user.email // Add any other user details as needed
+        email: user.email,
+        role: user.role // Include role in the JWT payload
       }
     };
 
@@ -70,7 +75,8 @@ const login = async (req, res) => {
       { expiresIn: '1h' }, // Token expires in 1 hour
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        // Return token and user role in response
+        res.json({ token, role: user.role });
       }
     );
 
@@ -79,6 +85,7 @@ const login = async (req, res) => {
     res.status(500).json({ message: 'Server Error' });
   }
 };
+
 
 
 // Get all users (protected route)
@@ -108,6 +115,7 @@ const deleteUser = async (req, res) => {
   }
 };
 
+// Update user role by ID (protected route)
 const updateUserRole = async (req, res) => {
   const userId = req.params.id;
   const { role } = req.body;

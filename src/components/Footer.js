@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col items-start">
           <h2 className="text-lg font-semibold mb-2">Barangay Sta. Cruz</h2>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.4397003255926!2d121.01453701533025!3d14.554545789832217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c94fe6fa3ab5%3A0x9a6b0fd3f5b9dbb5!2sSta.%20Cruz%2C%20Makati%2C%201210%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sus!4v1622218837043!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7723.135069486692!2d121.01312145921396!3d14.566705943427356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a6e378bcb7%3A0xbbce544bd1134425!2sSanta%20Cruz%2C%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sus!4v1722604363486!5m2!1sen!2sus" referrerpolicy="no-referrer-when-downgrade"
             width="100%"
             height="200"
             allowFullScreen=""
