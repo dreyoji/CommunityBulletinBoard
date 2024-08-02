@@ -90,7 +90,7 @@ const LocalEvents = () => {
   // Function to handle deleting an event
   const handleDeleteEvent = async (eventId) => {
     try {
-      const response = await axios.delete(`/api/events/${eventId}`, {
+      const response = await axios.delete('/api/events/${eventId}', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
