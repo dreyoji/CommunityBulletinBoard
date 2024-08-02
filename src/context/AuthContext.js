@@ -36,8 +36,7 @@ export const AuthProvider = ({ children }) => {
 
   const registerUser = async (name, email, password) => {
     try {
-      const response = await axios({
-        url: '/api/auth/register',
+      const response = await axios('https://url.vercel.app' + '/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

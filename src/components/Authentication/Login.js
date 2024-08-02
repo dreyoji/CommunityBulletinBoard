@@ -18,8 +18,7 @@ const Login = ({ switchToRegister, onSuccess }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios({
-        url: '/api/auth/login',
+      const response = await axios('https://url.vercel.app'+ '/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

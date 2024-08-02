@@ -11,7 +11,7 @@ const ManageUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('/api/users', {
+        const response = await axios.get(`https://url.vercel.app`+'/api/users', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -43,7 +43,7 @@ const ManageUsers = () => {
 
   const handleDeleteUser = async (id) => {
     try {
-      const response = await axios.delete(`/api/users/${id}`, {
+      const response = await axios.delete(`https://url.vercel.app`+`/api/users/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -60,7 +60,7 @@ const ManageUsers = () => {
 
   const handlePromoteAdmin = async (id) => {
     try {
-      const response = await axios.put(`/api/users/${id}/role`, { role: 'admin' }, {
+      const response = await axios.put(`https://url.vercel.app`+`/api/users/${id}/role`, { role: 'admin' }, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -79,7 +79,7 @@ const ManageUsers = () => {
 
   const handleRevokeAdmin = async (id) => {
     try {
-      const response = await axios.put(`/api/users/${id}/role`, { role: 'user' }, {
+      const response = await axios.put(`https://url.vercel.app`+`/api/users/${id}/role`, { role: 'user' }, {
         headers: {
           Authorization: `Bearer ${token}`
         }
