@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setToken(null);
-    setRole('user'); 
+    setRole('user');
     localStorage.removeItem('token');
     localStorage.removeItem('role');
   };
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
       login(token, role);
     } catch (error) {
       console.error('Registration error:', error);
-      throw error; 
+      throw error; // Propagate the error to handle in the component
     }
   };
 
