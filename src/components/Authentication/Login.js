@@ -18,7 +18,7 @@ const Login = ({ switchToRegister, onSuccess }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios('/api/auth/login', {
+      const response = await axios('/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
