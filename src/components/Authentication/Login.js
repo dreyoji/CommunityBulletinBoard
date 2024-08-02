@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -17,7 +18,7 @@ const Login = ({ switchToRegister, onSuccess }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/login', {
+      const response = await axios('/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
