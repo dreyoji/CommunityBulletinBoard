@@ -10,7 +10,13 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());                                      // Enable Cross-Origin Resource Sharing (CORS)
+app.use(cors(
+  {
+    origin: ['https://community-bulletin-board-frontend.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  }
+));                                      
 app.use(express.json());                              // Parse JSON bodies
 
 // Connect to MongoDB database
