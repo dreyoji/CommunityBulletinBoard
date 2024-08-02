@@ -22,11 +22,6 @@ const Navbar = () => {
           <Link to="/directory" className="hover:text-gray-700">Directory</Link>
         </div>
         <div className="flex space-x-4 items-center">
-          <input 
-            type="text" 
-            placeholder="Search" 
-            className="p-1 rounded border border-gray-300"
-          />
           <button className="hover:text-gray-700" onClick={openAuthModal}>
             <UserIcon className="h-6 w-6" />
           </button>

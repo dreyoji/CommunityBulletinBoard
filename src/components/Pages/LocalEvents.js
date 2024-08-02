@@ -1,8 +1,8 @@
 // src/components/LocalEvents.js
 import React from 'react';
 import { motion } from 'framer-motion';
-import { events } from '../data/events'; 
-import EventCard from './EventCard'; 
+import { events } from '../../data/events'; 
+import EventCard from '../EventCard'; 
 
 const LocalEvents = () => {
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import barangayPoster from '../assets/barangay-poster.jpg'; 
-import barangayCityHall from '../assets/barangay-city-hall.jpg'; 
-import { events } from '../data/events'; 
-import EventCard from './EventCard'; 
+import barangayPoster from '../../assets/barangay-poster.jpg'; 
+import barangayCityHall from '../../assets/barangay-city-hall.jpg'; 
+import { events } from '../../data/events'; 
+import EventCard from '../EventCard'; 
 
 const LandingPage = () => {
   return (

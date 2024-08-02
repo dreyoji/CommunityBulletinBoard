@@ -2,8 +2,8 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { motion } from 'framer-motion';
-import barangayPoster from '../assets/barangay-poster.jpg';
-import { ReactComponent as OfficialIcon } from '../assets/official-icon.svg'; 
+import barangayPoster from '../../assets/barangay-poster.jpg';
+import { ReactComponent as OfficialIcon } from '../../assets/official-icon.svg'; 
 
 const carouselImages = [
   '/assets/carousel1.jpg',
